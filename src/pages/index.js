@@ -1,9 +1,12 @@
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function Index() {
   const router = useRouter();
 
-  router.push("/learn");
+  useEffect(() => {
+    router.push("/learn");
+  }, [router]);
 
   return <></>;
 }
