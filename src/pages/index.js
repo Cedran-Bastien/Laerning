@@ -1,3 +1,9 @@
+import { useRouter } from "next/navigation";
+
 export default function Index() {
-  return <p className="ml-4">Layout</p>;
+  const router = useRouter();
+
+  router.push("/learn");
+
+  return <></>;
 }

@@ -17,6 +17,7 @@ module.exports = {
       },
     ],
     "react/jsx-props-no-spreading": "off",
+    "react/jsx-no-useless-fragment": "off",
     "react/jsx-no-constructed-context-values": "off",
     "max-len": "off",
     "import/no-unresolved": "off",
