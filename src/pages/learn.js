@@ -1,26 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import TextField from "@mui/material/TextField";
+import Autocomplete from "@mui/material/Autocomplete";
 import CardGrid from "@/components/CardGrid";
-//on recupere les langues des animaux dans un tableau depuis le dossier data
+// on recupere les langues des animaux dans un tableau depuis le dossier data
 // on importe tous de set1
 import * as set1 from "@/data/set1";
-import TextField from '@mui/material/TextField';
-import Autocomplete from '@mui/material/Autocomplete';
 
 export default function Learning() {
-
-  const [selectedLanguage, setSelectedLanguage] = useState('en');
+  const [selectedLanguage, setSelectedLanguage] = useState("en");
   const langues = Object.keys(set1);
   const handleLanguageChange = (event, value) => {
     setSelectedLanguage(value);
   };
 
-  const handleOnImageClick = (event, text) => {
-    // const voices = speechSynthesis.getVoices();
-
-    // voices.forEach((voice) => {
-    //   console.log(voice);
-    // });
-
+  const handleOnImageClick = (text) => {
     const utterance = new SpeechSynthesisUtterance(text);
 
     utterance.lang = "en-US"; // la langue du texte
@@ -46,11 +39,15 @@ export default function Learning() {
           renderInput={(params) => <TextField {...params} label="Langues" />}
         />
       </div>
-      <h1 className="text-2xl text-center">Learn the names of the animals in {selectedLanguage}</h1>
-      <CardGrid imgNames={set1.en} names={set1[selectedLanguage]} />
-      <button type="button" onClick={handleOnImageClick}>
-      click
-    </button>
+      <h1 className="text-2xl text-center">
+        Learn the names of the animals in
+        {selectedLanguage}
+      </h1>
+      <CardGrid
+        imgNames={set1.en}
+        names={set1[selectedLanguage]}
+        handleOnImageClick={handleOnImageClick}
+      />
     </div>
   );
 }

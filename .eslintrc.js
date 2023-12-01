@@ -16,6 +16,7 @@ module.exports = {
         extensions: [".js", ".jsx"],
       },
     ],
+    "import/extensions": "off",
     "react/jsx-props-no-spreading": "off",
     "react/jsx-no-useless-fragment": "off",
     "react/jsx-no-constructed-context-values": "off",
