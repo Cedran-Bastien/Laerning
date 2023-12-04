@@ -1,18 +1,18 @@
-import { createContext, useState } from 'react';
-import * as set1 from '@/data/set1.json';
+import { createContext, useState } from "react";
+import * as set1 from "@/data/set1.json";
 
 export const AppContext = createContext({
   words: [],
   languages: [],
-  selectedLanguage: 'en',
+  selectedLanguage: "en",
   setWords: () => {},
   setCurrentLanguage: () => {},
 });
 
 export function AppContextProvider({ children }) {
-  const [selectedLanguage, setSelectedLanguage] = useState('en');
+  const [selectedLanguage, setSelectedLanguage] = useState("en");
   const [languages] = useState(
-    Object.keys(set1).filter((item) => item !== 'default'),
+    Object.keys(set1).filter((item) => item !== "default"),
   );
   const [words, setListWords] = useState(set1[selectedLanguage]);
 

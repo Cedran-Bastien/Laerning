@@ -1,10 +1,10 @@
-import React from 'react';
-import TextField from '@mui/material/TextField';
-import Autocomplete from '@mui/material/Autocomplete';
-import CardGrid from '@/components/CardGrid';
+import React from "react";
+import TextField from "@mui/material/TextField";
+import Autocomplete from "@mui/material/Autocomplete";
+import CardGrid from "@/components/CardGrid";
 // on recupere les langues des animaux dans un tableau depuis le dossier data
 // on importe tous de set1
-import useApp from '@/hooks/useApp';
+import useApp from "@/hooks/useApp";
 
 export default function Learning() {
   const { selectedLanguage, languages, setCurrentLanguage } = useApp();
@@ -17,7 +17,7 @@ export default function Learning() {
   const handleOnImageClick = (text) => {
     const utterance = new SpeechSynthesisUtterance(text);
 
-    utterance.lang = 'en-US'; // la langue du texte
+    utterance.lang = "en-US"; // la langue du texte
     utterance.volume = 1; // volume (entre 0 et 1) - défaut : 1
     utterance.rate = 0.7; // vitesse d'élocution (entre 0 et 10) - défaut : 1
 
@@ -40,9 +40,7 @@ export default function Learning() {
         />
       </div>
       <h1 className="text-2xl text-center">
-        Learn the names of the animals in
-        {' '}
-        {selectedLanguage}
+        Learn the names of the animals in {selectedLanguage}
       </h1>
       <CardGrid handleOnImageClick={handleOnImageClick} />
     </>

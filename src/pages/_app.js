@@ -1,14 +1,14 @@
-import '@/styles/globals.css';
-import { Box, Tab, Tabs } from '@mui/material';
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
-import { AppContextProvider } from '@/context/AppContext';
+import "@/styles/globals.css";
+import { Box, Tab, Tabs } from "@mui/material";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { AppContextProvider } from "@/context/AppContext";
 
 export default function MyApp({ Component, pageProps }) {
   const [value, setValue] = useState(0);
   const [tabs] = useState([
-    { name: 'Learning', route: 'learn' },
-    { name: 'Test your skill', route: 'test' },
+    { name: "Learning", route: "learn" },
+    { name: "Test your skill", route: "test" },
   ]);
 
   const router = useRouter();
@@ -20,7 +20,7 @@ export default function MyApp({ Component, pageProps }) {
   return (
     <>
       <Box>
-        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+        <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
           <Tabs centered value={value} onChange={handleChange}>
             {tabs.map((item) => (
               <Tab key={item.name} label={item.name} />
