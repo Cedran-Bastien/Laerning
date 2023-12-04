@@ -1,16 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import CardGrid from "@/components/CardGrid";
 // on recupere les langues des animaux dans un tableau depuis le dossier data
 // on importe tous de set1
-import * as set1 from "@/data/set1";
+import useApp from "@/hooks/useApp";
 
 export default function Learning() {
-  const [selectedLanguage, setSelectedLanguage] = useState("en");
-  const langues = Object.keys(set1);
-  const handleLanguageChange = (event, value) => {
-    setSelectedLanguage(value);
+  const { selectedLanguage, languages, setCurrentLanguage } = useApp();
+
+  // const [selectedLanguage, setSelectedLanguage] = useState("en");
+  const handleOnLanguageChange = (event, value) => {
+    setCurrentLanguage(value);
   };
 
   const handleOnImageClick = (text) => {
@@ -24,30 +25,24 @@ export default function Learning() {
   };
 
   return (
-    <div>
+    <>
       <h1 className="text-4xl text-center">Welcome to my farm!</h1>
       <p className="text-center">{}</p>
       <div className="flex justify-center m-4">
         <Autocomplete
           disablePortal
           id="combo-box-langues"
-          className=""
-          options={langues}
+          options={languages}
           sx={{ width: 300 }}
           value={selectedLanguage}
-          onChange={handleLanguageChange}
+          onChange={handleOnLanguageChange}
           renderInput={(params) => <TextField {...params} label="Langues" />}
         />
       </div>
       <h1 className="text-2xl text-center">
-        Learn the names of the animals in
-        {selectedLanguage}
+        Learn the names of the animals in {selectedLanguage}
       </h1>
-      <CardGrid
-        imgNames={set1.en}
-        names={set1[selectedLanguage]}
-        handleOnImageClick={handleOnImageClick}
-      />
-    </div>
+      <CardGrid handleOnImageClick={handleOnImageClick} />
+    </>
   );
 }

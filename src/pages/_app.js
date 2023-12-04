@@ -2,6 +2,7 @@ import "@/styles/globals.css";
 import { Box, Tab, Tabs } from "@mui/material";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { AppContextProvider } from "@/context/AppContext";
 
 export default function MyApp({ Component, pageProps }) {
   const [value, setValue] = useState(0);
@@ -17,7 +18,7 @@ export default function MyApp({ Component, pageProps }) {
   };
 
   return (
-    <div>
+    <>
       <Box>
         <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
           <Tabs centered value={value} onChange={handleChange}>
@@ -27,7 +28,9 @@ export default function MyApp({ Component, pageProps }) {
           </Tabs>
         </Box>
       </Box>
-      <Component {...pageProps} />
-    </div>
+      <AppContextProvider>
+        <Component {...pageProps} />
+      </AppContextProvider>
+    </>
   );
 }
