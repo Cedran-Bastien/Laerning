@@ -1,19 +1,19 @@
-import { Alert, Snackbar } from '@mui/material';
-import { useEffect, useState } from 'react';
-import useApp from '@/hooks/useApp';
-import CardGrid from '@/components/CardGrid';
+import { Alert, Snackbar } from "@mui/material";
+import { useEffect, useState } from "react";
+import useApp from "@/hooks/useApp";
+import CardGrid from "@/components/CardGrid";
 
 export default function Test() {
   const [openSuccess, setSuccess] = useState(false);
   const [openError, setError] = useState(false);
   const { words } = useApp();
-  const [randomWord, setRandomWord] = useState('horse');
+  const [randomWord, setRandomWord] = useState("horse");
   const [wordChoose, setWordChoose] = useState(false);
 
   const speak = (text) => {
     const utterance = new SpeechSynthesisUtterance(text);
 
-    utterance.lang = 'en-US'; // la langue du texte
+    utterance.lang = "en-US"; // la langue du texte
     utterance.volume = 1; // volume (entre 0 et 1) - défaut : 1
     utterance.rate = 0.7; // vitesse d'élocution (entre 0 et 10) - défaut : 1
 
@@ -21,7 +21,7 @@ export default function Test() {
   };
 
   const handleClose = (event, reason) => {
-    if (reason === 'clickaway') {
+    if (reason === "clickaway") {
       return;
     }
 
@@ -31,16 +31,16 @@ export default function Test() {
 
   const handelOnImageClick = (name) => {
     if (!wordChoose) {
-      speak('you have to click on the next button');
+      speak("you have to click on the next button");
       return;
     }
 
-    let reponse = 'Try again !';
+    let reponse = "Try again !";
     if (name === randomWord) {
       setError(false);
       setSuccess(true);
       setWordChoose(false);
-      reponse = 'Good work !';
+      reponse = "Good work !";
     } else {
       setSuccess(false);
       setError(true);
@@ -68,27 +68,26 @@ export default function Test() {
     <>
       <Snackbar
         anchorOrigin={{
-          vertical: 'top',
-          horizontal: 'center',
+          vertical: "top",
+          horizontal: "center",
         }}
         open={openSuccess}
         autoHideDuration={1500}
         onClose={handleClose}
       >
-        <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
-          Good Answer !
-          let`&apos;`s next
+        <Alert onClose={handleClose} severity="success" sx={{ width: "100%" }}>
+          Good Answer ! let`&apos;`s next
         </Alert>
       </Snackbar>
       <Snackbar
         anchorOrigin={{
-          vertical: 'top',
-          horizontal: 'center',
+          vertical: "top",
+          horizontal: "center",
         }}
         open={openError}
         autoHideDuration={1500}
       >
-        <Alert onClose={handleClose} severity="error" sx={{ width: '100%' }}>
+        <Alert onClose={handleClose} severity="error" sx={{ width: "100%" }}>
           Wrong Answer: try again !
         </Alert>
       </Snackbar>
@@ -111,7 +110,6 @@ export default function Test() {
           Listen
         </button>
       </div>
-
     </>
   );
 }
