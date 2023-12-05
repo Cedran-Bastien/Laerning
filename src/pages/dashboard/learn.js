@@ -12,7 +12,7 @@ export default function Learning() {
 
     utterance.lang = `${selectedLanguage}-${selectedLanguage.toUpperCase()}`; // la langue du texte
     utterance.volume = 1; // volume (entre 0 et 1) - défaut : 1
-    utterance.rate = 0.7; // vitesse d'élocution (entre 0 et 10) - défaut : 1
+    utterance.rate = 1; // vitesse d'élocution (entre 0 et 10) - défaut : 1
 
     window.speechSynthesis.speak(utterance);
   };
@@ -22,6 +22,9 @@ export default function Learning() {
       <h1 className="mt-4 mb-4 text-2xl text-center">
         Learn the names of the animals in {selectedLanguage}
       </h1>
+      <p className="text-center">
+        Click on the image to listen to the pronunciation
+      </p>
       <CardGrid handleOnImageClick={handleOnImageClick} />
     </>
   );

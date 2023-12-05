@@ -5,7 +5,10 @@
         "chicken", 
         "sheep", 
         "horse",
-        "goose"
+        "goose",
+        "dog",
+        "llama",
+        "turkey"
     ],
     "it" : [
         "maiale", 
@@ -13,7 +16,10 @@
         "pollo", 
         "pecora", 
         "cavallo",
-        "oca"
+        "oca",
+        "cane",
+        "lama",
+        "tacchino"
     ],
     "es" : [
         "cerdo", 
@@ -21,7 +27,10 @@
         "pollo", 
         "oveja", 
         "caballo",
-        "ganso"
+        "ganso",
+        "perro",
+        "llama",
+        "pavo"
     ],
     "de" : [
         "Schwein", 
@@ -29,6 +38,9 @@
         "Huhn", 
         "Schaf", 
         "Pferd",
-        "Gans"
+        "Gans",
+        "Hund",
+        "Lama",
+        "Truthahn"
     ]
 }

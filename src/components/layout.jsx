@@ -5,8 +5,9 @@ import { Box, Tab, Tabs } from "@mui/material";
 export default function DashboardLayout({ children }) {
   const pathname = usePathname();
   const [tabs] = useState([
+    { name: "Home", route: "/" },
     { name: "Learning", route: "/dashboard/learn" },
-    { name: "Test your skill", route: "/dashboard/test" },
+    { name: "Test your skill", route: "/dashboard/test" }
   ]);
   const [value, setValue] = useState(
     tabs.map((item) => item.route).indexOf(pathname),

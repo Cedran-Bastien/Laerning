@@ -16,7 +16,7 @@ export default function Test() {
 
     utterance.lang = `${selectedLanguage} ${selectedLanguage.toUpperCase()}`; // la langue du texte
     utterance.volume = 1; // volume (entre 0 et 1) - défaut : 1
-    utterance.rate = 0.7; // vitesse d'élocution (entre 0 et 10) - défaut : 1
+    utterance.rate = 1; // vitesse d'élocution (entre 0 et 10) - défaut : 1
 
     window.speechSynthesis.speak(utterance);
   };
@@ -77,7 +77,7 @@ export default function Test() {
         onClose={handleClose}
       >
         <Alert onClose={handleClose} severity="success" sx={{ width: "100%" }}>
-          Good Answer ! let`&apos;`s next
+          Good Answer ! let&apos;s next
         </Alert>
       </Snackbar>
       <Snackbar
@@ -93,7 +93,7 @@ export default function Test() {
         </Alert>
       </Snackbar>
       <h1 className="text-4xl mt-4 mb-4 text-center">Welcome to my farm !</h1>
-      <CardGrid handleOnImageClick={handelOnImageClick} />
+      <p className="text-center"> Who's That Animal ?</p>
       <div className="flex justify-center gap-2">
         <button
           type="button"
@@ -111,6 +111,7 @@ export default function Test() {
           Listen
         </button>
       </div>
+      <CardGrid handleOnImageClick={handelOnImageClick} />
     </>
   );
 }
