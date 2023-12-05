@@ -1,8 +1,8 @@
-import React from 'react';
-import CardGrid from '@/components/CardGrid';
+import React from "react";
+import CardGrid from "@/components/CardGrid";
 // on recupere les langues des animaux dans un tableau depuis le dossier data
 // on importe tous de set1
-import useApp from '@/hooks/useApp';
+import useApp from "@/hooks/useApp";
 
 export default function Learning() {
   const { selectedLanguage } = useApp();
@@ -20,9 +20,7 @@ export default function Learning() {
   return (
     <>
       <h1 className="mt-4 mb-4 text-2xl text-center">
-        Learn the names of the animals in
-        {' '}
-        {selectedLanguage}
+        Learn the names of the animals in {selectedLanguage}
       </h1>
       <CardGrid handleOnImageClick={handleOnImageClick} />
     </>

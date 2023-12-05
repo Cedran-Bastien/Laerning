@@ -1,12 +1,12 @@
-import { useRouter } from 'next/navigation';
-import React from 'react';
-import LanguageChoose from '@/components/LanguageChoose';
+import { useRouter } from "next/navigation";
+import React from "react";
+import LanguageChoose from "@/components/LanguageChoose";
 
 export default function Index() {
   const router = useRouter();
 
   const handelOnListenButtonClick = () => {
-    router.push('/dashboard/learn');
+    router.push("/dashboard/learn");
   };
 
   return (
@@ -22,8 +22,6 @@ export default function Index() {
           Choose
         </button>
       </div>
-
     </>
-
   );
 }

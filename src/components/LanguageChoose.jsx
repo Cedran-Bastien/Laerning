@@ -1,7 +1,7 @@
-import Autocomplete from '@mui/material/Autocomplete';
-import TextField from '@mui/material/TextField';
-import React from 'react';
-import useApp from '@/hooks/useApp';
+import Autocomplete from "@mui/material/Autocomplete";
+import TextField from "@mui/material/TextField";
+import React from "react";
+import useApp from "@/hooks/useApp";
 
 function LanguageChoose() {
   const { selectedLanguage, languages, setCurrentLanguage } = useApp();
@@ -11,7 +11,9 @@ function LanguageChoose() {
 
   return (
     <>
-      <h1 className="mt-4 mb-10 text-4xl text-center">Choose your learning language</h1>
+      <h1 className="mt-4 mb-10 text-4xl text-center">
+        Choose your learning language
+      </h1>
       <div className="flex justify-center m-4">
         <Autocomplete
           disablePortal
