@@ -1,15 +1,16 @@
-import "@/styles/globals.css";
-import { Box, Tab, Tabs } from "@mui/material";
-import { useState } from "react";
-import { useRouter } from "next/navigation";
-import { AppContextProvider } from "@/context/AppContext";
+import '@/styles/globals.css';
+import { Box, Tab, Tabs } from '@mui/material';
+import { useState } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
+import { AppContextProvider } from '@/context/AppContext';
 
 export default function MyApp({ Component, pageProps }) {
-  const [value, setValue] = useState(0);
+  const pathname = usePathname();
   const [tabs] = useState([
-    { name: "Learning", route: "learn" },
-    { name: "Test your skill", route: "test" },
+    { name: 'Learning', route: 'learn' },
+    { name: 'Test your skill', route: 'test' },
   ]);
+  const [value, setValue] = useState(tabs.map((item) => item.route).indexOf(pathname.split('/')[1]));
 
   const router = useRouter();
   const handleChange = (event, newValue) => {
@@ -17,10 +18,11 @@ export default function MyApp({ Component, pageProps }) {
     setValue(newValue);
   };
 
+
   return (
     <>
       <Box>
-        <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
           <Tabs centered value={value} onChange={handleChange}>
             {tabs.map((item) => (
               <Tab key={item.name} label={item.name} />
