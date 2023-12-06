@@ -8,6 +8,7 @@ export default function Learning() {
   const { selectedLanguage } = useApp();
 
   const handleOnImageClick = (text) => {
+    console.log(text);
     const utterance = new SpeechSynthesisUtterance(text);
 
     utterance.lang = `${selectedLanguage}-${selectedLanguage.toUpperCase()}`; // la langue du texte

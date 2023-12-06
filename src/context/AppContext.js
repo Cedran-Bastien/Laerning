@@ -1,11 +1,10 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from 'react';
 import * as set1 from "@/data/set1.json";
 
 export const AppContext = createContext({
   words: [],
   languages: [],
   selectedLanguage: "en",
-  setWords: () => {},
   setCurrentLanguage: () => {},
 });
 
@@ -16,12 +15,14 @@ export function AppContextProvider({ children }) {
   );
   const [words, setListWords] = useState(set1[selectedLanguage]);
 
-  const setWords = () => {
+  useEffect(() => {
     setListWords(set1[selectedLanguage]);
-  };
+    console.log(selectedLanguage);
+    console.log(words);
+  }, [selectedLanguage, setListWords]);
   const setCurrentLanguage = (newlanguage) => {
+    console.log(newlanguage);
     setSelectedLanguage(newlanguage);
-    setWords();
   };
 
   return (
@@ -30,7 +31,6 @@ export function AppContextProvider({ children }) {
         words,
         languages,
         selectedLanguage,
-        setWords,
         setCurrentLanguage,
       }}
     >

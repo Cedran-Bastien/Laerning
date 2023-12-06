@@ -3,13 +3,8 @@ import { useEffect, useState } from "react";
 import useApp from "@/hooks/useApp";
 import CardGrid from "@/components/CardGrid";
 
-export default function Test() {
+const useSpeaker = () => {
   const { selectedLanguage } = useApp();
-  const [openSuccess, setSuccess] = useState(false);
-  const [openError, setError] = useState(false);
-  const { words } = useApp();
-  const [randomWord, setRandomWord] = useState("horse");
-  const [wordChoose, setWordChoose] = useState(false);
 
   const speak = (text) => {
     const utterance = new SpeechSynthesisUtterance(text);
@@ -20,6 +15,17 @@ export default function Test() {
 
     window.speechSynthesis.speak(utterance);
   };
+
+  return speak;
+};
+
+export default function Test() {
+  const speak = useSpeaker();
+  const [openSuccess, setSuccess] = useState(false);
+  const [openError, setError] = useState(false);
+  const { words } = useApp();
+  const [randomWord, setRandomWord] = useState("horse");
+  const [wordChoose, setWordChoose] = useState(false);
 
   const handleClose = (event, reason) => {
     if (reason === "clickaway") {
@@ -54,7 +60,7 @@ export default function Test() {
       return;
     }
     speak(randomWord);
-  }, [randomWord, wordChoose]);
+  }, [randomWord, wordChoose, speak]);
 
   const handelOnNextButtonClick = () => {
     setRandomWord(words[Math.floor(Math.random() * words.length)]);
@@ -62,6 +68,7 @@ export default function Test() {
   };
 
   const handelOnListenButtonClick = () => {
+    fetch("/add-image")
     speak(randomWord);
   };
 
