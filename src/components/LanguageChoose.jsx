@@ -1,20 +1,20 @@
 import Autocomplete from "@mui/material/Autocomplete";
 import TextField from "@mui/material/TextField";
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import useApp from "@/hooks/useApp";
-import { useRouter } from 'next/navigation';
 
 function LanguageChoose() {
   const { selectedLanguage, languages, setCurrentLanguage } = useApp();
-  const [autocompleteValue, setValue] = useState(selectedLanguage)
-  const router = useRouter()
+  const [autocompleteValue, setValue] = useState(selectedLanguage);
+  const router = useRouter();
 
   const handleOnLanguageChange = (event, language) => {
     setValue(language);
   };
 
   const handelOnListenButtonClick = () => {
-    setCurrentLanguage(autocompleteValue)
+    setCurrentLanguage(autocompleteValue);
     router.push("/dashboard/learn");
   };
 

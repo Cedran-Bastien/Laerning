@@ -7,7 +7,7 @@ export default function DashboardLayout({ children }) {
   const [tabs] = useState([
     { name: "Learning", route: "/dashboard/learn" },
     { name: "Test your skill", route: "/dashboard/test" },
-    { name: "Change Languages", route: "/" }
+    { name: "Change Languages", route: "/" },
   ]);
   const [value, setValue] = useState(
     tabs.map((item) => item.route).indexOf(pathname),

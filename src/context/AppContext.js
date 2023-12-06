@@ -19,7 +19,6 @@ export function AppContextProvider({ children }) {
     setListWords(set1[selectedLanguage]);
   }, [selectedLanguage, setListWords]);
   const setCurrentLanguage = (newlanguage) => {
-    console.log(newlanguage);
     setSelectedLanguage(newlanguage);
   };
 

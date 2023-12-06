@@ -13,8 +13,6 @@ const useSpeaker = () => {
     utterance.volume = 1; // volume (entre 0 et 1) - défaut : 1
     utterance.rate = 1; // vitesse d'élocution (entre 0 et 10) - défaut : 1
 
-    console.log(utterance.lang);
-
     window.speechSynthesis.speak(utterance);
   };
 
@@ -102,7 +100,7 @@ export default function Test() {
         </Alert>
       </Snackbar>
       <h1 className="text-4xl mt-4 mb-4 text-center">Welcome to my farm !</h1>
-      <p className="text-center"> Who's That Animal ?</p>
+      <p className="text-center"> Who`&apos;`s That Animal ?</p>
       <div className="flex justify-center gap-2">
         <button
           type="button"
