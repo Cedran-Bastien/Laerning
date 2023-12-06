@@ -22,7 +22,7 @@ module.exports = {
     "react/jsx-no-constructed-context-values": "off",
     "max-len": "off",
     "import/no-unresolved": "off",
-    "quotes": "off",
-    "react/jsx-one-expression-per-line": "off"
+    quotes: "off",
+    "react/jsx-one-expression-per-line": "off",
   },
 };

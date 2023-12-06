@@ -68,7 +68,7 @@ export default function Test() {
   };
 
   const handelOnListenButtonClick = () => {
-    fetch("/add-image")
+    fetch("/add-image");
     speak(randomWord);
   };
 

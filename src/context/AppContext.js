@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from 'react';
+import { createContext, useEffect, useState } from "react";
 import * as set1 from "@/data/set1.json";
 
 export const AppContext = createContext({
