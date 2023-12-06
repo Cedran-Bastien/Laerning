@@ -29,3 +29,7 @@ bun dev
 ```
 
 Enfin, ouvrir [http://localhost:3000](http://localhost:3000) avec votre navigateur pour voir le résultat.
+
+Capture d'écran de l'interface :
+
+![image](interface.png)
