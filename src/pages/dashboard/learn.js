@@ -15,6 +15,8 @@ export default function Learning() {
     utterance.volume = 1; // volume (entre 0 et 1) - défaut : 1
     utterance.rate = 1; // vitesse d'élocution (entre 0 et 10) - défaut : 1
 
+    console.log(utterance.lang);
+
     window.speechSynthesis.speak(utterance);
   };
 

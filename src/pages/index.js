@@ -4,26 +4,12 @@ import LanguageChoose from "@/components/LanguageChoose";
 import useApp from "@/hooks/useApp";
 
 export default function Index() {
-  const router = useRouter();
-  const { words } = useApp();
-  const handelOnListenButtonClick = () => {
-    console.log(words);
-    router.push("/dashboard/learn");
-  };
+
 
   return (
     <>
       <LanguageChoose />
-      <div className="flex justify-center">
-        <button
-          aria-label="Choose"
-          type="button"
-          onClick={handelOnListenButtonClick}
-          className="bg-blue-500 m-5 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-        >
-          Choose
-        </button>
-      </div>
+
     </>
   );
 }

@@ -9,9 +9,11 @@ const useSpeaker = () => {
   const speak = (text) => {
     const utterance = new SpeechSynthesisUtterance(text);
 
-    utterance.lang = `${selectedLanguage} ${selectedLanguage.toUpperCase()}`; // la langue du texte
+    utterance.lang = `${selectedLanguage}-${selectedLanguage.toUpperCase()}`; // la langue du texte
     utterance.volume = 1; // volume (entre 0 et 1) - défaut : 1
     utterance.rate = 1; // vitesse d'élocution (entre 0 et 10) - défaut : 1
+
+    console.log(utterance.lang);
 
     window.speechSynthesis.speak(utterance);
   };

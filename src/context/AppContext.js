@@ -17,8 +17,6 @@ export function AppContextProvider({ children }) {
 
   useEffect(() => {
     setListWords(set1[selectedLanguage]);
-    console.log(selectedLanguage);
-    console.log(words);
   }, [selectedLanguage, setListWords]);
   const setCurrentLanguage = (newlanguage) => {
     console.log(newlanguage);
