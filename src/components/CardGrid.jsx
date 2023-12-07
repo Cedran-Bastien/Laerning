@@ -9,8 +9,8 @@ function CardGrid({ handleOnImageClick }) {
   return (
     <div className="flex justify-center">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-2xl">
-        {words &&
-          words.map((name, index) => (
+        {words
+          && words.map((name, index) => (
             <div
               key={name}
               className="w-full h-auto bg-white rounded overflow-hidden shadow-lg"
