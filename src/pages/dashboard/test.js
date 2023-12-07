@@ -100,7 +100,7 @@ export default function Test() {
         </Alert>
       </Snackbar>
       <h1 className="text-4xl mt-4 mb-4 text-center">Welcome to my farm !</h1>
-      <p className="text-center"> Who`&apos;`s That Animal ?</p>
+      <p className="text-center"> Who&apos;s That Animal ?</p>
       <div className="flex justify-center gap-2">
         <button
           type="button"
